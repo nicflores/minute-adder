@@ -4,6 +4,6 @@ lazy val impl = (project in file("impl"))
     version := "0.1",
     scalaVersion := "2.12.17",
     libraryDependencies ++= Seq(
-      "org.scalatest" %% "scalatest" % "3.1.1" % "test"
-    ),
+      "org.scalatest" %% "scalatest" % "3.2.16" % "test"
+    )
   )
