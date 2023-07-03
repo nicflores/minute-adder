@@ -25,4 +25,4 @@ jobs:
     - name: Run tests
       run: sbt test
     - name: Run main
-      run: sbt 'impl/run "5:02PM" 15'
+      run: sbt 'impl/run "5:02 PM" 15'
