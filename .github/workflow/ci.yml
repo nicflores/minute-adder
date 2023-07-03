@@ -1,0 +1,23 @@
+name: Scala CI publish
+on:
+  push:
+    tags:
+      - v* #match all version tags e.g. v0.1.0
+    secrets:
+      ARTIFACTORY_USERNAME:
+        required: true
+      ARTIFACTORY_PASSWORD:
+        required: true
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: 'sbt'
+    - name: Run tests
+      run: sbt test
