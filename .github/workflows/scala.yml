@@ -24,3 +24,5 @@ jobs:
         cache: 'sbt'
     - name: Run tests
       run: sbt test
+    - name: Run main
+      run: sbt 'impl/run "5:02PM" 15'
