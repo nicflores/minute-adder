@@ -7,7 +7,7 @@ object MinuteAdder {
   /* Please don't change the signature of this method. */
   def addMinutes(time: String, minutes: Int): String = {
     TimeExtractor.timeparser(time) match {
-      case Left(value) => value.msg
+      case Left(e) => s"[error] ${e.message} in $time"
       case Right(t) => {
 
         val tempMins = t.minute + minutes
